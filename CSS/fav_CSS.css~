@@ -1,0 +1,53 @@
+body 
+{ 
+	background-color: #fff; 
+   color: #333; 
+   font-size: .85em;
+   margin: 20; 
+   padding: 20;
+   font-family: "Segoe UI", Verdana, Helvetica, Sans-
+   float: right;
+}
+.foodFS
+{
+   margin-left: 50px;
+   width: 400px;
+}
+#fField
+{
+   background-color: gray;
+}
+.pmookStyle
+{
+   background-color: gray;
+   height: 60px;
+}
+#pmook1
+{
+   color: white;
+   font-size: 40px;
+   margin-top: 20px;
+   margin-left: 70px;
+   cursor: pointer;
+}
+#foodIMG
+{
+   height: 50px;
+   width: 50px;
+   float: right;
+}
+.foodClass, .gameClass, .actClass, .hobbyClass
+{
+   width: 400px;
+   float: left;
+}
+.foodDiv, .gameDiv, .actDiv, .hobbyDiv
+{
+   float: right;
+   width: 500px;
+   margin-right: 60px;
+}
+.foodFStab, .gameFStab, .actFStab, .hobbyFStab
+{
+   text-align: center;
+}

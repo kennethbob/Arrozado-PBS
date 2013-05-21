@@ -1,0 +1,77 @@
+<?php
+
+	include 'DAO/userDAO.php';
+	$action = new userDAO();
+		if(isset($_REQUEST['firstname']) && isset($_REQUEST['middlename']) && isset($_REQUEST['lastname']) && isset($_REQUEST['birthday']) && isset($_REQUEST['age']) && isset($_REQUEST['gender']) && isset($_REQUEST['address']) && isset($_REQUEST['contact_number']) && isset($_REQUEST['status']) && isset($_REQUEST['alternate_name']) && isset($_REQUEST['username']) && isset($_REQUEST['email_address']) && isset($_REQUEST['password']) && isset($_REQUEST['password2'])){	
+			$verrify = $action->registered($_REQUEST['firstname'], $_REQUEST['middlename'], $_REQUEST['lastname'], $_REQUEST['birthday'], $_REQUEST['age'], $_REQUEST['gender'], $_REQUEST['address'], $_REQUEST['contact_number'], $_REQUEST['status'], $_REQUEST['alternate_name'], $_REQUEST['username'], $_REQUEST['email_address'], $_REQUEST['password'], $_REQUEST['password2']);
+		
+		header('Location: pmook.php'); 
+			
+		}/*else{
+					$verMsg = "<div id = 'mySuc'><img id = 'suc' src = 'icons/success.png'>Successfully Registered</div>";
+		}
+		*/
+?>
+<html>
+
+<head>
+<title>Welcome to pmook</title>
+<script src = "js/myScript.js"></script>
+<link rel = "stylesheet" href = "CSS/myScript.css"/>
+<link rel = "shortcut icon" href = "icons/p.png"/>
+</head>
+<body>
+<fieldset class = "myFSstyle">
+<p id = "myName">pmook</p>
+</fieldset>
+<p>Fill in all fields, then click <strong>Submit</strong> to register. If you are already a member, just click the button <strong>Login now</strong>.
+<!
+	<?php 
+    if (isset($verMsg)) {
+        echo $verMsg;
+         }
+    ?>
+-->
+<p id = "meH5">Sign Up</p>
+     <hr/>
+     <h5 id = "IDme">You're always free to join ..</h5>
+<div class = "wholeClass">
+<form id = "myForm" name = "contact" action = "pmook.php" method = "POST">
+		<div class = "my1stClass">
+			Firstname:	<fieldset id = "myField2"><input type = "text" name = "firstname" id = "firstname"/></fieldset>
+			Middlename: <fieldset id = "myField2"><input type = "text" name = "middlename" id = "middlename"/></fieldset>
+			Lastname: <fieldset id = "myField2"><input type = "text" name = "lastname" id = "lastname"/></fieldset>
+			Birthday: <fieldset id = "myField2"><input type = "text" name = "birthday" id = "birthday"/></fieldset>
+			Age: <fieldset id = "myField2"><input type = "text" name = "age" id = "age"/></fieldset>
+			Gender: <fieldset id = "myField2"><input type = "text" name = "gender" id = "gender"/></fieldset>
+			Address: <fieldset id = "myField2"><input type = "text" name = "address" id = "address"/></fieldset>
+	   </div>
+	   <div class = "my2ndClass">
+			Contact Number: <fieldset id = "myField2"><input type = "text" name = "contact_number" id = "contact_number"/></fieldset>
+			Status: <fieldset id = "myField2"><input type = "text" name = "status" id = "status"/></fieldset>
+			Alternate Name: <fieldset id = "myField2"><input type = "text" name = "alternate_name" id = "alternate_name"/></fieldset>
+			Username: <fieldset id = "myField2"><input type = "text" name = "username" id = "username"/></fieldset>
+			Email Address: <fieldset id = "myField2"><input type = "text" name = "email_address" id = "email_address"/></fieldset>
+			Password: <fieldset id = "myField2"><input type = "password" name = "password" id = "password"/></fieldset>
+			Confirm-password: <fieldset id = "myField2"><input type = "password" name = "password2" id = "password2"/></fieldset>
+	   </div>
+								<input type = "hidden" id = "id">
+	<br>
+	<fieldset id = "MBF">
+		<br>
+		<button type = "submit" id = "myReg" name = "myReg">Submit</button> || Already a member ? <button id = "myLog"><a href = "pmook_login.php">Login now</a></button>
+		</br>
+	</fieldset>
+</form>
+</div>
+<div class = "myImageDiv">
+   <img id = "wowImage" src = "icons/conn.jpg"/>
+</div>
+	</br>	
+	</br>
+	</br>
+<hr id = "myHR"/>
+<h5 id = "myH5">Copyright © 2013-2013 || <a href = "pmook.php">pmook.com </a>.. All Rights Reserved.</h5>
+<h5 id = "myH5hit">prepared by <a href = "http//:www.facebook.com/annpermejo">Kenneth Bob Arrozado</a></h5>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?php
+	session_start();
+	include 'DAO/userDAO.php';
+	$action = new userDAO();
+		if(isset($_REQUEST['username']) && isset($_REQUEST['password'])){	
+			$verrify = $action->logIn($_REQUEST['username'],$_REQUEST['password']);	
+		if($verrify){
+				$_SESSION['username'] = $_REQUEST['username'];
+				
+				
+				header('Location: pmook_index.php');	
+			}else{
+					$errMsg = "<div id = 'myphp'><img id = 'war' src = 'icons/warning-icon.png'>Username and Password didn't match</div>";
+			}
+			
+		}
+
+?>
+
+<html>
+<head>
+<title>Login Form</title>
+<link rel = "stylesheet" href = "CSS/myScript.css"/>
+</head>
+<body>
+<fieldset class = "myFSstyle">
+<p id = "myName">pmook</p>
+</fieldset>
+<p>You can only login if you are already a member. If you want to register, just click the button <strong>register now</strong>.</p>
+<div class = "wholeClassLog">
+	<fieldset id = "myLField">
+			<?php 
+    if (isset($errMsg)) {
+        echo $errMsg;
+         }
+    ?>
+	<br><fieldset id = "LF"><strong><h3>Login</h3></strong></fieldset></br>
+		<form method = "POST">
+			Username: <fieldset id = "myField3"><input type = "text" name = "username" id = "username"/></fieldset>
+			Password: <fieldset id = "myField3"><input type = "password" name = "password" id = "password"/></fieldset>
+		<br>
+		<fieldset id = "BF">		
+			<br>	
+				<input id = "log" type = "submit" value = "login"/> || Not yet a member ? <button id = "myReg"><a href = "pmook.php">register now</a></button>	
+			</br>
+		</fieldset>	
+		</br>
+		</form>	
+	</fieldset>
+	<div id = "IDimg">
+	<img id = "connect" src = "icons/hands.jpg"/>
+   </div>
+</div>
+<div class = "my2ndImageDiv">
+   <img id = "connectImage" src = "icons/lets.jpg"/>
+</div>
+</br>
+<hr id = "myHR"/>
+<h5 id = "myH5">Copyright © 2013-2013 || <a href = "pmook.php">pmook.com </a>.. All Rights Reserved.</h5>
+<h5 id = "myH5hit">prepared by <a href = "http//:www.facebook.com/annpermejo">Kenneth Bob Arrozado</a></h5>
+</body>
+</html>
