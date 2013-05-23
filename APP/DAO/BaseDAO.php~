@@ -7,7 +7,7 @@
 		protected $dbh = null;
 
 		function open(){
-			$this->dbh = new PDO("mysql:host=localhost:dbname=".$this->db_name, $this->user, $this->pass);
+			$this->dbh = new PDO("mysql:host=localhost;dbname=".$this->db_name, $this->user, $this->pass);
 		}
 		
 		function close(){
